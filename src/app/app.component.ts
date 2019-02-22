@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'ng-assignment-four';
+  gameCounter = 0;
+
+  onGameCounterIncreased(gameCounterData: { increase: number }) {
+    this.gameCounter += gameCounterData.increase;
+    console.log(this.gameCounter);
+  }
+
+  gameCounterIsEven() {
+    return this.gameCounter % 2 === 0;
+  }
 }
